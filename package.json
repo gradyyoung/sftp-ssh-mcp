@@ -1,0 +1,30 @@
+{
+  "name": "sftp-ssh-mcp",
+  "license": "MIT",
+  "version": "0.0.1",
+  "author": "GradyYoung",
+  "description": "MCP server exposing SSH and SFTP control for Linux and Windows systems via Model Context Protocol.",
+  "type": "module",
+  "bin": {
+    "ssh-mcp": "build/index.js"
+  },
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "tsc && shx chmod +x build/*.js",
+    "inspect": "npx @modelcontextprotocol/inspector node build/index.js"
+  },
+  "files": [
+    "build"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.10.2",
+    "ssh2": "^1.11.0",
+    "zod": "^3.24.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.31",
+    "@types/ssh2": "^1.15.5",
+    "shx": "^0.4.0",
+    "typescript": "^5.4.5"
+  }
+}
